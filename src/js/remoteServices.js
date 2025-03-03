@@ -7,6 +7,8 @@ export default {
     host: "https://app.asana.com",
     urlPatterns: [
       [/^:host:\/\d\/\d+\/(\d+)/, ["id"]],
+      [/^:host:\/\d\/\d+\/project\/\d+\/task\/(\d+)/, ["id"]],
+      [/^:host:\/\d\/\d+\/inbox\/\d+\/item\/\d+\/story\/(\d+)/, ["id"]],
       [/^:host:\/\d\/home\/\d+\/(\d+)/, ["id"]],
       [/^:host:\/\d\/inbox\/\d+\/(\d+)/, ["id"]],
       ":host:/\d/search",

@@ -237,6 +237,16 @@ describe("utils", () => {
         expect(service.id).toEqual("675")
         expect(service.match.id).toEqual("675")
         expect(service.name).toEqual("asana")
+
+        service = matcher("https://app.asana.com/1/345/project/678/task/123")
+        expect(service.id).toEqual("123")
+        expect(service.match.id).toEqual("123")
+        expect(service.name).toEqual("asana")
+
+        service = matcher("https://app.asana.com/1/345/inbox/678/item/123/story/456")
+        expect(service.id).toEqual("456")
+        expect(service.match.id).toEqual("456")
+        expect(service.name).toEqual("asana")
       })
     })
 
