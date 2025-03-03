@@ -10,6 +10,7 @@ export default {
       [/^:host:\/0\/inbox\/\d+\/(\d+)/, ["id"]],
       ":host:/0/search",
       [/^:host:\/0\/search\/\d+\/(\d+)/, ["id"]],
+      [/^:host:\/\d\/home\/\d+\/(\d+)/, ["id"]],
     ],
     queryParams: {
       id: "child",
