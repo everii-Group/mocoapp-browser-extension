@@ -18,7 +18,9 @@ export default {
       id: "child",
     },
     description: (document) => document.querySelector(".TitleInput textarea")?.textContent?.trim(),
-    projectId: projectIdentifierBySelector(".TopbarPageHeaderStructure-titleRow h1"),
+    projectId: projectIdentifierBySelector(
+      ".TopbarPageHeaderStructureWithBreadcrumbs-titleAndBreadcrumbs h1",
+    ),
     allowHostOverride: false,
     position: { right: "50%", transform: "translateX(50%)" },
   },
