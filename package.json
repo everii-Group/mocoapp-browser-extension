@@ -23,7 +23,7 @@
     "@vespaiach/axios-fetch-adapter": "^0.3.0",
     "axios": "^0.29.0",
     "classnames": "^2.5.1",
-    "core-js": "^3.38.1",
+    "core-js": "^3.42.0",
     "date-fns": "^4.1.0",
     "dotenv": "^16.0.0",
     "focus-trap": "^7.6.0",
