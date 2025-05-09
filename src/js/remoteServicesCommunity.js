@@ -213,4 +213,37 @@ export default {
     projectId: (document) => projectIdentifierBySelector(".current-project")(document),
     allowHostOverride: true,
   },
+
+  // visualstudio.com/azure devops service configs provided by lx-media (@barokai)
+  visualstudiocom: {
+    name: "visualstudiocom",
+    host: "https://:org.visualstudio.com",
+    // https://org.visualstudio.com/project/_workitems/edit/id/
+    urlPatterns: [":host:/:project/_workitems/edit/:id(/*)"],
+    description: (document, _service, { title }) => {
+      console.log("trying to load description information for azuredevopsvs");
+      const issueIdMatch = window.location.href.match(/_workitems\/edit\/(\d+)(?:\/.*)?(?:\?.*)?/)
+      const issueId = issueIdMatch ? issueIdMatch[1] : null
+      const issueTitle = document.querySelector(".work-item-title-textfield>input")?.value.trim() || title
+      return issueId ? `${issueId}: ${issueTitle}` : issueTitle
+    },
+    projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
+    allowHostOverride: false,
+  },
+
+  azuredevops: {
+    name: "azuredevops",
+    host: "https://dev.azure.com",
+    // https://dev.azure.com/org/project/_workitems/edit/id/
+    urlPatterns: [":host:/:org/:project/_workitems/edit/:id(/*)"],
+    description: (document, _service, { title }) => {
+      console.log("trying to load description information for azuredevops", _service, title);
+      const issueIdMatch = window.location.href.match(/_workitems\/edit\/(\d+)(?:\/.*)?(?:\?.*)?/)
+      const issueId = issueIdMatch ? issueIdMatch[1] : null
+      const issueTitle = document.querySelector(".work-item-title-textfield>input")?.value.trim() || title
+      return issueId ? `${issueId}: ${issueTitle}` : issueTitle
+    },
+    projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
+    allowHostOverride: false,
+  }
 }
