@@ -30,7 +30,7 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^19.1.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.1.0",
     "react-select": "^5.10.1",
     "url-pattern": "^1.0.3",
     "webext-bridge": "^6.0.1",
