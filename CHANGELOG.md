@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.11.0] – 2025-06-12
+
+### Added
+
+- Added support for visualstudio.com and azure.com by [Barokai](https://github.com/Barokai)
+
 ## [2.10.0] – 2025-05-08
 
 ### Changed
@@ -34,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- added redmine support by zeroseven/@pdaether
+- Added redmine support by zeroseven/@pdaether
 
 ## [2.7.5] – 2024-10-17
 
