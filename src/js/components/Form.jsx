@@ -20,6 +20,7 @@ class Form extends Component {
       hours: PropTypes.string,
     }).isRequired,
     errors: PropTypes.object,
+    descriptionMandatory: PropTypes.bool.isRequired,
     projects: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
@@ -27,9 +28,12 @@ class Form extends Component {
 
   isValid() {
     const { changeset } = this.props
+    const descriptionWithoutTag = changeset.description.replace(/^#\S+/, "").trim()
     return (
       ["assignment_id", "task_id"].map((prop) => changeset[prop]).every(Boolean) &&
-      (changeset.date === formatDate(new Date()) || changeset.seconds > 0)
+      (changeset.date === formatDate(new Date()) || changeset.seconds > 0) &&
+      ((this.props.descriptionMandatory && descriptionWithoutTag) ||
+        !this.props.descriptionMandatory)
     )
   }
 
@@ -125,7 +129,7 @@ class Form extends Component {
             name="description"
             onChange={onChange}
             value={changeset.description}
-            placeholder="Beschreibung der Tätigkeit – optional"
+            placeholder={`Beschreibung der Tätigkeit${this.props.descriptionMandatory ? "" : " – optional"}`}
             maxLength={500}
             rows={3}
             onKeyDown={this.handleTextareaKeyDown}
