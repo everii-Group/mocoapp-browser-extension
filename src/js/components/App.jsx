@@ -185,6 +185,7 @@ class App extends Component {
       fromDate,
       toDate,
       settingTimeTrackingHHMM,
+      settingTimeTrackingDescriptionMandatory,
       errorType,
       errorMessage,
     } = this.state
@@ -225,6 +226,7 @@ class App extends Component {
               changeset={this.changesetWithDefaults}
               projects={projects}
               errors={this.state.formErrors}
+              descriptionMandatory={settingTimeTrackingDescriptionMandatory}
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             />
