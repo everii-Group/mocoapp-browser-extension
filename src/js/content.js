@@ -59,12 +59,9 @@ function updateBubble({ service, bookedSeconds, settingTimeTrackingHHMM, timedAc
 function findRootNode() {
   const el = document.querySelector('[aria-modal="true"]')
 
-  if (!el) {
-    return document.body
-  }
-
-  const { display, visibility } = window.getComputedStyle(el)
-  if (display === "none" || visibility == "hidden") {
+  // check if the element exists and is visible
+  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
+  if (!el || el.offsetParent === null) {
     return document.body
   }
 
