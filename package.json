@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@vespaiach/axios-fetch-adapter": "^0.3.0",
-    "axios": "^0.30.0",
+    "axios": "^0.30.1",
     "classnames": "^2.5.1",
     "core-js": "^3.44.0",
     "date-fns": "^4.1.0",
