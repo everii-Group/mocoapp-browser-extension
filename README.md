@@ -42,7 +42,7 @@ You can keep the extension settings between builds by providing a stable `APPLIC
 
 ### Remote Service Configuration
 
-Remote services are configured in `src/js/remoteServices.js`.
+Remote services are configured in `src/js/remoteServices.js` (for MOCO maintained services) and `src/js/remoteServicesCommunity.js` (for community-maintained services).
 
 A remote service is configured as follows:
 
@@ -88,7 +88,7 @@ A remote service is configured as follows:
 ### Adding a Custom Service
 
 1. Fork and clone this repository
-2. Add your service to `src/removeServices.js`, e.g. for self-hosted Jira copy the entry with the key `jira` and update the `urlPatterns`:
+2. Add your service to `src/js/remoteServicesCommunity.js`, e.g. for self-hosted Jira copy the entry with the key `jira` and update the `urlPatterns`:
 
 ```javascript
   "self-hosted-jira": {
