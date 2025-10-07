@@ -47,7 +47,7 @@ export default {
       }
 
       // Breadcrumbs on top of the card, reverse order in order ot prioritize the last item
-      return Array.from(document.querySelectorAll(".cu-task-view-breadcrumbs__text"))
+      return Array.from(document.querySelectorAll("cu-task-view-breadcrumbs a"))
         .reverse()
         .reduce((projectId, element) => {
           if (projectId) {
