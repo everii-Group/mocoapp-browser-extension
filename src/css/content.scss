@@ -1,16 +1,16 @@
-@import "variables";
-@import "button";
-@import "animation";
+@use "variables";
+@use "button";
+@use "animation";
 
 #moco-bx-root {
   position: fixed;
-  font-family: $font-family;
-  color: $font-color;
+  font-family: variables.$font-family;
+  color: variables.$font-color;
   pointer-events: all;
   z-index: 99999;
 
   .text-red {
-    color: $red;
+    color: variables.$red;
   }
 
   .moco-bx-bubble {
@@ -56,8 +56,8 @@
 
 #moco-bx-popup-root {
   position: fixed;
-  font-family: $font-family;
-  color: $font-color;
+  font-family: variables.$font-family;
+  color: variables.$font-color;
   pointer-events: all;
   z-index: 99999;
 

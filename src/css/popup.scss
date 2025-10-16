@@ -1,7 +1,7 @@
-@import "variables";
-@import "form";
-@import "spinner";
-@import "animation";
+@use "variables";
+@use "form";
+@use "spinner";
+@use "animation";
 
 html {
   overflow: hidden;
@@ -9,8 +9,8 @@ html {
   body {
     font-size: 14px;
     margin: 0px;
-    font-family: $font-family;
-    color: $font-color;
+    font-family: variables.$font-family;
+    color: variables.$font-color;
 
     #moco-bx-root {
       min-width: 516px;
@@ -32,11 +32,11 @@ html {
       }
 
       .text-red {
-        color: $red;
+        color: variables.$red;
       }
 
       .text-secondary {
-        color: $gray-base;
+        color: variables.$gray-base;
       }
 
       .moco-bx-app-container {
@@ -87,7 +87,7 @@ html {
 
             &.moco-bx-calendar__day--filled {
               .moco-bx-calendar__hours {
-                background-color: $green;
+                background-color: variables.$green;
               }
             }
 
@@ -100,7 +100,7 @@ html {
 
             &.moco-bx-calendar__day--active {
               .moco-bx-calendar__hours {
-                background-color: $blue;
+                background-color: variables.$blue;
               }
             }
           }
@@ -134,7 +134,7 @@ html {
 
           .btn-stop-timer {
             margin-top: 1.5rem;
-            background-color: $red;
+            background-color: variables.$red;
             border: none;
             border-radius: 50%;
             width: 60px;

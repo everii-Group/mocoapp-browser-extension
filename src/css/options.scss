@@ -1,10 +1,10 @@
-@import "variables";
-@import "reset";
-@import "form";
+@use "variables";
+@use "reset";
+@use "form";
 
 #moco-bx-root {
-  font-family: $font-family;
-  color: $font-color;
+  font-family: variables.$font-family;
+  color: variables.$font-color;
   font-size: 14px;
   line-height: 1.5;
 
@@ -12,7 +12,7 @@
     padding: 0rem 2rem 2rem;
 
     a {
-      color: $blue;
+      color: variables.$blue;
       text-decoration: none;
     }
 
@@ -42,11 +42,11 @@
     }
 
     .text-success {
-      color: $green;
+      color: variables.$green;
     }
 
     .text-danger {
-      color: $red;
+      color: variables.$red;
     }
 
     &__host-overrides {
