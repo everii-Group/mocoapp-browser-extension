@@ -1,3 +1,5 @@
+@use "variables";
+
 button.moco-bx-btn {
   display: block;
   padding: 8px 12px;
@@ -7,8 +9,8 @@ button.moco-bx-btn {
   white-space: nowrap;
   color: white;
   background-image: none;
-  background-color: $green;
-  border-color: $green;
+  background-color: variables.$green;
+  border-color: variables.$green;
   border-radius: 0;
   border-style: solid;
   box-shadow: none;
@@ -24,8 +26,8 @@ button.moco-bx-btn {
   }
 
   &:hover:not(:disabled) {
-    background-color: $green-dark;
-    border-color: $green-dark;
+    background-color: variables.$green-dark;
+    border-color: variables.$green-dark;
   }
 
   &:disabled {
@@ -50,14 +52,14 @@ button.moco-bx-btn {
 }
 
 .moco-bx-btn__secondary {
-  color: $blue;
+  color: variables.$blue;
   border: none;
   background: none;
   text-decoration: none;
 
   &:hover {
     cursor: pointer;
-    color: $blue;
+    color: variables.$blue;
     border: none;
     background-color: transparent;
   }

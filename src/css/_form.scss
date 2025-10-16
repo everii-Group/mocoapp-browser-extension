@@ -1,5 +1,5 @@
-@import "variables";
-@import "button";
+@use "variables";
+@use "button";
 
 input {
   border-radius: 0;
@@ -39,12 +39,12 @@ input {
   &.has-error {
     input,
     textarea {
-      border-color: $red;
+      border-color: variables.$red;
     }
   }
 
   .form-error {
-    color: $red;
+    color: variables.$red;
   }
 
   .input-group {
@@ -84,8 +84,8 @@ input[name="hours"] {
   outline: 0 !important;
 
   &:focus {
-    border: 1px solid $blue;
-    box-shadow: 0 0 0 1px $blue;
+    border: 1px solid variables.$blue;
+    box-shadow: 0 0 0 1px variables.$blue;
   }
 }
 
@@ -97,7 +97,7 @@ textarea[name="description"] {
   outline: 0 !important;
 
   &:focus {
-    border: 1px solid $blue;
-    box-shadow: 0 0 0 1px $blue;
+    border: 1px solid variables.$blue;
+    box-shadow: 0 0 0 1px variables.$blue;
   }
 }
