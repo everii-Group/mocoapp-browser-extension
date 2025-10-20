@@ -176,6 +176,7 @@ export default {
     host: "https://:org.youtrack.cloud",
     urlPatterns: [
       ":host:/issue/:id(/*)",
+      ":host:/projects/:projectId/issues",
       ":host:/youtrack/issue/:id(/*)",
       ":host:/issues",
       ":host:/search/:filter",
