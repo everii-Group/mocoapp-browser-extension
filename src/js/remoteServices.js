@@ -177,12 +177,14 @@ export default {
     urlPatterns: [
       ":host:/issue/:id(/*)",
       ":host:/projects/:projectId/issues",
+      ":host:/projects/:projectId/agiles/:agileId/current",
+      ":host:/agiles/:agileId/current",
       ":host:/youtrack/issue/:id(/*)",
       ":host:/issues",
       ":host:/search/:filter",
     ],
     queryParams: {
-      id: "preview",
+      id: ["preview", "issue"],
     },
     description: (document) =>
       document.querySelector('h1[data-test="ticket-summary"]')?.textContent?.trim(),
