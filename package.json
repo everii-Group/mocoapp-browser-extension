@@ -62,7 +62,7 @@
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
     "uuid": "^13.0.0",
-    "webpack": "^5.102.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",
     "zip-webpack-plugin": "^4.0.1"
   },
