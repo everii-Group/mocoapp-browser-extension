@@ -181,6 +181,7 @@ export default {
       ":host:/agiles/:agileId/current",
       ":host:/youtrack/issue/:id(/*)",
       ":host:/issues",
+      ":host:/issues/:projectId",
       ":host:/search/:filter",
     ],
     queryParams: {
