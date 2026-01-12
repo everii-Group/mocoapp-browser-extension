@@ -29,7 +29,7 @@
     "focus-trap": "^7.7.1",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
-    "react": "^19.1.1",
+    "react": "^19.2.3",
     "react-dom": "^19.1.0",
     "react-select": "^5.10.2",
     "url-pattern": "^1.0.3",
