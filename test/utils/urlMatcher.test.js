@@ -223,6 +223,34 @@ describe("utils", () => {
         expect(service.noteId).toEqual("87285")
       })
 
+      it.each([
+        {
+          label: "url",
+          url: "https://gitlab.com/testorganisatzion/testproject/-/work_items/1",
+          projectId: "testproject",
+        },
+        {
+          label: "url with note anchor",
+          url: "https://gitlab.com/testorganisatzion/testproject/-/work_items/1#note_85524",
+          projectId: "testproject",
+          noteId: "85524",
+        },
+        {
+          label: "url with group and folder",
+          url: "https://gitlab.com/testorganisatzion/test-group/folder/fodldertwo/folderthree/testproject/-/work_items/1",
+          projectId: "testproject",
+        },
+      ])("should match gitlab-work-item $label", ({ url, projectId, noteId }) => {
+        const service = matcher(url)
+        expect(service.id).toEqual("1")
+        expect(service.match.id).toEqual("1")
+        expect(service.name).toEqual("gitlab")
+        expect(service.projectId).toEqual(projectId)
+        if (noteId) {
+          expect(service.noteId).toEqual(noteId)
+        }
+      })
+
       it("should match asana urls", () => {
         let service
         service = matcher("https://app.asana.com/0/inbox/123/675/890")
