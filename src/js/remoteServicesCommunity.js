@@ -7,11 +7,22 @@ export default {
     urlPatterns: [
       ":host:/:org/:group(/*)/:projectId/-/issues/:id(#note_:noteId)",
       ":host:/:org(/*)/:projectId/-/issues/:id(#note_:noteId)",
+      ":host:/:org/:group(/*)/:projectId/-/work_items/:id(#note_:noteId)",
+      ":host:/:org(/*)/:projectId/-/work_items/:id(#note_:noteId)",
       ":host:/:org/:group(/*)/:projectId/-/merge_requests/:id(#note_:noteId)",
       ":host:/:org(/*)/:projectId/-/merge_requests/:id(#note_:noteId)",
     ],
     description: (document, service, { id, noteId: _noteId }) => {
-      const title = document.querySelector("h1")?.textContent?.trim()
+      const titleFromDocument = document.title?.trim()
+      const titleSuffix = " · GitLab"
+      const title =
+        document.querySelector("h1")?.textContent?.trim() ||
+        document
+          .querySelector('[data-testid="work-item-title"], [data-testid="issue-title"]')
+          ?.textContent?.trim() ||
+        (titleFromDocument?.endsWith(titleSuffix)
+          ? titleFromDocument.slice(0, -titleSuffix.length).trim()
+          : titleFromDocument)
       return `#${id} ${title || ""}`.trim()
     },
     allowHostOverride: true,
