@@ -60,6 +60,7 @@ export default {
     },
     id: (document, service, { id, customId }) => customId || id,
     allowHostOverride: false,
+    position: { left: "50%", transform: "translate(-50%)", bottom: "65px" },
   },
 
   "github-pr": {
