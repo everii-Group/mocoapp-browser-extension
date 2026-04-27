@@ -18,9 +18,7 @@ export default {
       id: "child",
     },
     description: (document) => document.querySelector(".TitleInput textarea")?.textContent?.trim(),
-    projectId: projectIdentifierBySelector(
-      ".PageHeader h1",
-    ),
+    projectId: projectIdentifierBySelector(".PageHeader h1"),
     allowHostOverride: false,
     position: { right: "50%", transform: "translateX(50%)" },
   },
