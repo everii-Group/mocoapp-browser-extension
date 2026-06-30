@@ -248,5 +248,29 @@ export default {
     },
     projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
     allowHostOverride: false,
-  }
+  },
+
+  notion: {
+    name: "notion",
+    host: "https://app.notion.com",
+    urlPatterns: [":host:/p/:workspace/*"],
+    queryParams: {
+      id: "p",
+    },
+    id: (_document, _service, { id, _: slug }) => {
+      if (id) return id
+      const slugMatch = slug?.match(/-([a-f0-9]{32})$/)
+      return slugMatch ? slugMatch[1] : null
+    },
+    description: (document, _service, { id }) => {
+      const h1s = Array.from(document.querySelectorAll("h1[contenteditable]")).filter(
+        (el) => el.textContent.trim(),
+      )
+      if (!h1s.length) return null
+      // In peek mode (id from ?p=) React renders the panel after the main page in the DOM
+      const h1 = id && h1s.length > 1 ? h1s[h1s.length - 1] : h1s[0]
+      return h1.textContent.trim()
+    },
+    allowHostOverride: false,
+  },
 }
