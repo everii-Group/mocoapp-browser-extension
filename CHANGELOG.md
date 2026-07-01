@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.18.0] – 2026-07-01
+
+### Added
+
+- Support for Notion [#1148](https://github.com/everii-Group/mocoapp-browser-extension/pull/1148)
+
+### Fixed
+
+- Fixed reading description from Github PR and issue
+
+## [2.17.1] – 2026-07-01
+
+### Fixed
+
+- Fixed issue where wrong NODE_ENV was used during build
+
+## [2.17.0] – 2026-07-01
+
+### Changes
+
+- Updated packages to latest version
+
 ## [2.16.0] – 2026-04-28
 
 ### Changed
