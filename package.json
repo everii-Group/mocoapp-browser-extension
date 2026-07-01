@@ -9,12 +9,12 @@
   ],
   "scripts": {
     "start": "yarn start:chrome",
-    "start:chrome": "webpack --config webpack.chrome.config.js --watch --env browser=chrome --env NODE_ENV=development",
-    "start:firefox": "webpack --config webpack.firefox.config.js --watch --env browser=firefox --env NODE_ENV=development",
+    "start:chrome": "webpack --config webpack.chrome.config.js --watch --env browser=chrome --config-node-env=development",
+    "start:firefox": "webpack --config webpack.firefox.config.js --watch --env browser=firefox --config-node-env=development",
     "zip:chrome": "zip -qr build/chrome/moco-bx-source.zip . -x .git/\\* build/\\* node_modules/\\* test/\\* .DS_Store",
     "zip:firefox": "zip -qr build/firefox/moco-bx-source.zip . -x .git/\\* build/\\* node_modules/\\* test/\\* .DS_Store",
-    "build:chrome": "webpack --config webpack.chrome.config.js --env browser=chrome --env NODE_ENV=production",
-    "build:firefox": "webpack --config webpack.firefox.config.js --env browser=firefox --env NODE_ENV=production",
+    "build:chrome": "webpack --config webpack.chrome.config.js --env browser=chrome --config-node-env production",
+    "build:firefox": "webpack --config webpack.firefox.config.js --env browser=firefox --config-node-env=production",
     "build": "yarn build:firefox && yarn zip:firefox && yarn build:chrome && yarn zip:chrome",
     "test": "./node_modules/.bin/jest",
     "test:watch": "jest --watch"
