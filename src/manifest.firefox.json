@@ -13,7 +13,7 @@
     "page": "options.html",
     "browser_style": true
   },
-  "permissions": ["https://*.mocoapp.com/*", "storage", "tabs"],
+  "permissions": ["https://*.mocoapp.com/*", "storage", "tabs", "webRequest"],
   "background": {
     "page": "background.html"
   },
