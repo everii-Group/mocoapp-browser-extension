@@ -68,7 +68,8 @@ export default {
     host: "https://github.com",
     urlPatterns: [":host:/:org/:repo/pull/:id(/:tab)"],
     id: (document, service, { org, repo, id }) => [service.key, org, repo, id].join("."),
-    description: (document) => document.querySelector(".js-issue-title")?.textContent?.trim(),
+    description: (document) =>
+      document.querySelector('[data-component="PH_Title"] span')?.textContent?.trim(),
     projectId: projectIdentifierBySelector(".js-issue-title"),
     allowHostOverride: false,
   },
@@ -78,8 +79,8 @@ export default {
     host: "https://github.com",
     urlPatterns: [":host:/:org/:repo/issues/:id"],
     id: (document, service, { org, repo, id }) => [service.key, org, repo, id].join("."),
-    description: (document, _service, { org: _org, repo: _repo, id: _id }) =>
-      document.querySelector("[data-testid='issue-title']")?.textContent?.trim(),
+    description: (document) =>
+      document.querySelector('[data-component="PH_Title"] span')?.textContent?.trim(),
     projectId: projectIdentifierBySelector("[data-testid='issue-title']"),
     allowHostOverride: false,
   },
