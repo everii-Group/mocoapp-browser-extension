@@ -3,6 +3,9 @@
   "short_name": "MOCO",
   "description": "MOCO Zeiterfassung Plugin",
   "manifest_version": 3,
+  "engines": {
+    "node": ">= 22.11.0"
+  },
   "icons": {
     "16": "src/images/moco-32x32.png",
     "32": "src/images/moco-32x32.png",
