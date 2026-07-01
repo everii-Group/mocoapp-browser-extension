@@ -231,10 +231,13 @@ export default {
     urlPatterns: [":host:/:project/_workitems/edit/:id(/*)"],
     description: (document, _service, { project, id }) => {
       // The project name is used as a fallback for the issue title
-      const issueTitle = document.querySelector(".work-item-title-textfield>input")?.value.trim() || decodeURIComponent(project)
+      const issueTitle =
+        document.querySelector(".work-item-title-textfield>input")?.value.trim() ||
+        decodeURIComponent(project)
       return id ? `${id}: ${issueTitle}` : issueTitle
     },
-    projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
+    projectId: (document) =>
+      projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
     allowHostOverride: false,
   },
 
@@ -243,10 +246,13 @@ export default {
     host: "https://dev.azure.com",
     urlPatterns: [":host:/:org/:project/_workitems/edit/:id(/*)"],
     description: (document, _service, { project, id }) => {
-      const issueTitle = document.querySelector(".work-item-title-textfield>input")?.value.trim() || decodeURIComponent(project)
+      const issueTitle =
+        document.querySelector(".work-item-title-textfield>input")?.value.trim() ||
+        decodeURIComponent(project)
       return id ? `${id}: ${issueTitle}` : issueTitle
     },
-    projectId: (document) => projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
+    projectId: (document) =>
+      projectIdentifierBySelector(".project-item span:nth-child(2)")(document),
     allowHostOverride: false,
   },
 
@@ -258,15 +264,19 @@ export default {
       id: "p",
     },
     id: (_document, _service, { id, _: slug }) => {
-      if (id) return id
+      if (id) {
+        return id
+      }
       const slugMatch = slug?.match(/-([a-f0-9]{32})$/)
       return slugMatch ? slugMatch[1] : null
     },
     description: (document, _service, { id }) => {
-      const h1s = Array.from(document.querySelectorAll("h1[contenteditable]")).filter(
-        (el) => el.textContent.trim(),
+      const h1s = Array.from(document.querySelectorAll("h1[contenteditable]")).filter((el) =>
+        el.textContent.trim(),
       )
-      if (!h1s.length) return null
+      if (!h1s.length) {
+        return null
+      }
       // In peek mode (id from ?p=) React renders the panel after the main page in the DOM
       const h1 = id && h1s.length > 1 ? h1s[h1s.length - 1] : h1s[0]
       return h1.textContent.trim()
