@@ -45,7 +45,9 @@ onMessage("togglePopup", (_message) => {
   getCurrentTab().then((tab) => {
     if (tab && !isBrowserTab(tab)) {
       sendMessage("requestService", null, `content-script@${tab.id}`).then((data) => {
-        togglePopup(tab)(data)
+        if (data) {
+          togglePopup(tab)(data)
+        }
       })
     }
   })
@@ -124,7 +126,9 @@ browser.action ??= browser.browserAction
 browser.action.onClicked.addListener((tab) => {
   if (!isBrowserTab(tab)) {
     sendMessage("requestService", {}, `content-script@${tab.id}`).then((data) => {
-      togglePopup(tab)(data)
+      if (data) {
+        togglePopup(tab)(data)
+      }
     })
   }
 })

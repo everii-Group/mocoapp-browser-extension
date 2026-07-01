@@ -91,6 +91,9 @@ function closePopup() {
 }
 
 onMessage("requestService", (_message) => {
+  if (!findService) {
+    return null
+  }
   const service = findService(window.location.href)
   return { isPopupOpen: !!popupRef.current, service }
 })
