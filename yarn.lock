@@ -3527,12 +3527,12 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.4.2.tgz#f5c23c107f0f37de8dbdf24f13722b3b98d52726"
   integrity sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==
 
-focus-trap@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-8.0.0.tgz#39ce25e930dbf58a3dfabc4f9b46d8488151e2de"
-  integrity sha512-Aa84FOGHs99vVwufDMdq2qgOwXPC2e9U66GcqBhn1/jEHPDhJaP8PYhkIbqG9lhfL5Kddk/567lj46LLHYCRUw==
+focus-trap@^8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-8.2.2.tgz#6e8a203f2228ca8b5eb95465433e69a5d5e48387"
+  integrity sha512-qV0g8hRYBqgACcFOH3f9wXc4zPKhr/0z9RI2a6ZijZ72EeBi4g8oBy8zAWuUR1TsMpOzwpUMFvjdasrC41Joug==
   dependencies:
-    tabbable "^6.4.0"
+    tabbable "^6.5.0"
 
 follow-redirects@^1.16.0:
   version "1.16.0"
@@ -6022,10 +6022,10 @@ synckit@^0.11.12, synckit@^0.11.8:
   dependencies:
     "@pkgr/core" "^0.2.9"
 
-tabbable@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.4.0.tgz#36eb7a06d80b3924a22095daf45740dea3bf5581"
-  integrity sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==
+tabbable@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.5.0.tgz#a65101385a4fd6cbd580b7546da0170f307b535d"
+  integrity sha512-wieBHXygIm7OyQOu5hQlkk62/WyCFYGlWg7L6/ZCUZwx0o398Zkn4pVmMyfYhfMG8kGrj/Krt8eIk6UKC6VzwA==
 
 tapable@^2.0.0, tapable@^2.2.1, tapable@^2.3.0:
   version "2.3.0"
