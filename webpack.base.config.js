@@ -99,7 +99,7 @@ module.exports = (env) => {
     devtool: "cheap-module-source-map",
   }
 
-  if (env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "production") {
     config.devtool = undefined
     config.plugins.push(
       new ZipPlugin({
