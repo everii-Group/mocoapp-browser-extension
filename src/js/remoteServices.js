@@ -80,7 +80,7 @@ export default {
     urlPatterns: [":host:/:org/:repo/issues/:id"],
     id: (document, service, { org, repo, id }) => [service.key, org, repo, id].join("."),
     description: (document) =>
-      document.querySelector('[data-component="PH_Title"] span')?.textContent?.trim(),
+      document.querySelector("[data-testid='issue-title']")?.textContent?.trim(),
     projectId: projectIdentifierBySelector("[data-testid='issue-title']"),
     allowHostOverride: false,
   },
