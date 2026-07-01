@@ -8,7 +8,7 @@ const baseConfig = require("./webpack.base.config")
 const appliationId = process.env.APPLICATION_ID
 
 module.exports = (env) => {
-  if (env.NODE_ENV === "production" && isEmpty(appliationId)) {
+  if (process.env.NODE_ENV === "production" && isEmpty(appliationId)) {
     throw new Error("APPLICATION_ID is not set, set it in .env or as an environment variable")
   }
 
@@ -29,7 +29,7 @@ module.exports = (env) => {
                 ...manifest,
                 permissions: compact([
                   ...manifest.permissions,
-                  env.NODE_ENV === "development" && process.env.USE_LOCAL_MOCO === "true"
+                  process.env.NODE_ENV === "development" && process.env.USE_LOCAL_MOCO === "true"
                     ? "http://*.mocoapp.localhost/*"
                     : null,
                 ]),

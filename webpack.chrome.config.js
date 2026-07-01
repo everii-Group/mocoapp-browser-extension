@@ -21,7 +21,7 @@ module.exports = (env) => {
                 ...manifest,
                 host_permissions: compact([
                   ...manifest.host_permissions,
-                  env.NODE_ENV === "development" && process.env.USE_LOCAL_MOCO === "true"
+                  process.env.NODE_ENV === "development" && process.env.USE_LOCAL_MOCO === "true"
                     ? "http://*.mocoapp.localhost/*"
                     : null,
                 ]),

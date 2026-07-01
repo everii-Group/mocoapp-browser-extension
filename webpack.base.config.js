@@ -95,12 +95,12 @@ module.exports = (env) => {
         images: path.join(__dirname, "src/images"),
       },
     },
-    mode: env.NODE_ENV || "development",
+    mode: process.env.NODE_ENV || "development",
     devtool: "cheap-module-source-map",
   }
 
   if (process.env.NODE_ENV === "production") {
-    config.devtool = undefined
+    config.devtool = false
     config.plugins.push(
       new ZipPlugin({
         filename: `moco-bx-${env.browser}-v${process.env.npm_package_version}.zip`,
