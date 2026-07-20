@@ -7,7 +7,7 @@ import {
   getStartOfWeek,
   getEndOfWeek,
 } from "utils"
-import { get, forEach, reject, isNil } from "lodash/fp"
+import { get, forEach, reject, isNil, isFunction } from "lodash/fp"
 import { createMatcher } from "utils/urlMatcher"
 import remoteServices from "remoteServices"
 import { sendMessage } from "webext-bridge/background"
@@ -18,10 +18,22 @@ const initMatcher = (settings) => {
   matcher = createMatcher(remoteServices, settings.hostOverrides)
 }
 
+// matched.id is either the raw url-pattern match (e.g. Notion's peek-mode
+// "?p=" query param) or, for services that define a custom id(), the
+// extractor function itself. Some extractors (e.g. Notion's slug-based
+// fallback for its full-page URLs) can only resolve an id this way, so the
+// raw match alone isn't enough to detect whether a service applies.
+function resolveServiceId(matched) {
+  if (!matched) {
+    return undefined
+  }
+  return isFunction(matched.id) ? matched.id(null, matched, matched.match) : matched.id
+}
+
 export async function tabUpdated(tab) {
   const settings = await getSettings()
   initMatcher(settings)
-  const hasService = matcher(tab.url)?.match?.id
+  const hasService = resolveServiceId(matcher(tab.url))
   const apiClient = new ApiClient(settings)
 
   if (hasService) {

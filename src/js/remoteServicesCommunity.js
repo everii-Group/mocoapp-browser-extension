@@ -281,6 +281,11 @@ export default {
       const h1 = id && h1s.length > 1 ? h1s[h1s.length - 1] : h1s[0]
       return h1.textContent.trim()
     },
+    // The tab URL can be a shared database view that not all users have access to.
+    // The single-page permalink (built from workspace + page id) always works.
+    remoteUrl: (document, service, { workspace }, id) =>
+      workspace && id ? `${service.host}/p/${workspace}/${id}` : null,
     allowHostOverride: false,
+    position: { top: "50%", right: "5px", bottom: "auto", transform: "translateY(-50%)" },
   },
 }

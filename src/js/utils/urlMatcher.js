@@ -88,13 +88,19 @@ export const createEnhancer = (document) => (service) => {
   const args = [document, service, match]
   const evaluate = createEvaluator(args)
 
+  const id = evaluate(service.id)
+
   return {
     ...service,
-    id: evaluate(service.id),
+    id,
     description: evaluate(service.description),
     projectId: evaluate(service.projectId),
     projectLabel: evaluate(service.projectLabel),
     taskId: evaluate(service.taskId),
+    // Some services (e.g. Notion) can end up on a tab URL that is only valid for the
+    // current user (a shared view link). remoteUrl lets a service build a stable,
+    // shareable link instead of falling back to the raw tab URL.
+    url: (isFunction(service.remoteUrl) && service.remoteUrl(document, service, match, id)) || service.url,
     position: service.position || { right: "calc(2rem + 5px)" },
   }
 }
