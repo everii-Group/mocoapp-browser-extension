@@ -318,6 +318,52 @@ describe("utils", () => {
         const enhancedService = createEnhancer(document)(service)
         expect(enhancedService.id).toEqual("T2023-53")
       })
+
+      it("uses remoteUrl to build a stable permalink for notion shared view links", () => {
+        const tabUrl =
+          "https://app.notion.com/p/myworkspace/Some-Slug?p=abcdef1234567890abcdef1234567890"
+        const document = {
+          querySelectorAll: jest.fn().mockReturnValue([]),
+        }
+        const service = matcher(tabUrl)
+        const enhancedService = createEnhancer(document)(service)
+        expect(enhancedService.url).toEqual(
+          "https://app.notion.com/p/myworkspace/abcdef1234567890abcdef1234567890",
+        )
+      })
+
+      it("uses remoteUrl to build a stable permalink for notion slug urls", () => {
+        const tabUrl =
+          "https://app.notion.com/p/myworkspace/My-Page-abcdef1234567890abcdef1234567890"
+        const document = {
+          querySelectorAll: jest.fn().mockReturnValue([]),
+        }
+        const service = matcher(tabUrl)
+        const enhancedService = createEnhancer(document)(service)
+        expect(enhancedService.url).toEqual(
+          "https://app.notion.com/p/myworkspace/abcdef1234567890abcdef1234567890",
+        )
+      })
+
+      it("falls back to the raw tab url when remoteUrl returns null", () => {
+        const tabUrl = "https://app.notion.com/p/myworkspace/Page-Without-Id"
+        const document = {
+          querySelectorAll: jest.fn().mockReturnValue([]),
+        }
+        const service = matcher(tabUrl)
+        const enhancedService = createEnhancer(document)(service)
+        expect(enhancedService.url).toEqual(tabUrl)
+      })
+
+      it("falls back to the raw tab url when service has no remoteUrl", () => {
+        const tabUrl = "https://github.com/hundertzehn/mocoapp/pull/123"
+        const document = {
+          querySelector: jest.fn().mockReturnValue({ textContent: "[4321] Foo" }),
+        }
+        const service = matcher(tabUrl)
+        const enhancedService = createEnhancer(document)(service)
+        expect(enhancedService.url).toEqual(tabUrl)
+      })
     })
   })
 
