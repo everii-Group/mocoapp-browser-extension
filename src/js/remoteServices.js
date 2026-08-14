@@ -202,6 +202,7 @@ export default {
     name: "wrike",
     host: "https://:region.wrike.com",
     urlPatterns: [
+      ":host:/open.htm",
       ":host:/workspace.htm#folder*",
       ":host:/workspace.htm#todo",
       ":host:/workspace.htm#created-by-me",
@@ -209,7 +210,7 @@ export default {
       ":host:/workspace.htm#dashboards",
     ],
     queryParams: {
-      id: ["sidePanelItemId", "overlayEntityId"],
+      id: ["id", "sidePanelItemId", "overlayEntityId"],
     },
     description: (document) => document.querySelector(".title__ghost")?.textContent?.trim(),
     projectId: projectIdentifierBySelector(".header-title__main"),

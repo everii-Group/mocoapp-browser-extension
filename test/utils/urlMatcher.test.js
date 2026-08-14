@@ -102,6 +102,18 @@ describe("utils", () => {
         expect(service.match.id).toEqual("342769562")
       })
 
+      it("matches wrike item view url", () => {
+        let service = matcher("https://www.wrike.com/open.htm?id=572415725")
+        expect(service.key).toEqual("wrike")
+        expect(service.name).toEqual("wrike")
+        expect(service.id).toEqual("572415725")
+        expect(service.match.id).toEqual("572415725")
+
+        service = matcher("https://app-eu.wrike.com/open.htm?id=572415725")
+        expect(service.key).toEqual("wrike")
+        expect(service.id).toEqual("572415725")
+      })
+
       it("matches query parameter with different names", () => {
         const _remoteServices = {
           ...remoteServices,
