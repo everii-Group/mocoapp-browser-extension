@@ -59,7 +59,7 @@
     "sass-loader": "^17.0.0",
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
-    "uuid": "^14.0.1",
+    "uuid": "^14.0.2",
     "webpack": "^5.110.1",
     "webpack-cli": "^7.1.0",
     "zip-webpack-plugin": "^4.0.1"
