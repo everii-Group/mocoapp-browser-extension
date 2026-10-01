@@ -60,7 +60,7 @@
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
     "uuid": "^14.0.2",
-    "webpack": "^5.110.1",
+    "webpack": "^5.111.1",
     "webpack-cli": "^7.2.3",
     "zip-webpack-plugin": "^4.0.1"
   },
