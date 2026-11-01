@@ -72,14 +72,14 @@
     obug "^2.1.1"
     semver "^7.7.3"
 
-"@babel/eslint-parser@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-8.0.1.tgz#34a56c88deb4cf1340257296d1309028fadbb953"
-  integrity sha512-2javO8pAQv/ld6sS6OcxoLAlzZEZy+xm99bnoAfMhzKSumKhdF5wylpbZB7XTorWr3KLPtx5K95eduJPOy1mzA==
+"@babel/eslint-parser@^8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-8.0.7.tgz#ae5b9f9bf09dae608fd6e696a6a7018c4a74650d"
+  integrity sha512-ik5I+U64QuQQPohw0A1wVWPR+vTRYVfWBDLOLc1KwZQ2SKayQLD52DgoB3W/kmwc4MP1E37qh7nZuDD9xsKYcA==
   dependencies:
     eslint-scope "^9.1.0"
     eslint-visitor-keys "^5.0.0"
-    semver "^7.7.3"
+    verkit "^0.5.0"
 
 "@babel/generator@^7.27.5", "@babel/generator@^7.29.7", "@babel/generator@^7.29.8":
   version "7.29.8"
@@ -6258,6 +6258,11 @@ v8-to-istanbul@^9.0.1:
     "@jridgewell/trace-mapping" "^0.3.12"
     "@types/istanbul-lib-coverage" "^2.0.1"
     convert-source-map "^2.0.0"
+
+verkit@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/verkit/-/verkit-0.5.0.tgz#8b7617dda9ad2edb7851c6a4ff5f3ca428482401"
+  integrity sha512-u4J1hr6Y+C/hit34GwL3eIcUf3wngT8TlYUjK7tk0jxydKLAq3sYvifjdTDA6U3KCKRcQCQDGf/srjxfZF3l7g==
 
 watchpack@^2.5.2:
   version "2.5.2"
