@@ -18,6 +18,8 @@
               nodejs_20
               yarn
               hivemind
+            ] ++ lib.optionals (!stdenv.isDarwin) [
+              # chromium is not packaged for darwin in nixpkgs
               chromium
             ];
 
