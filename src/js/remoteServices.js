@@ -103,6 +103,11 @@ export default {
       ":host:/jira/core/projects/:projectId/issues",
       ":host:/jira/core/projects/:projectId/list",
       ":host:/jira/core/projects/:projectId/timeline",
+      ":host:/jira/servicedesk/projects/:projectId/queues/custom/:queueId/:id",
+      ":host:/jira/servicedesk/projects/:projectId/queues/issue/:id",
+      ":host:/jira/servicedesk/projects/:projectId/section/:section/custom/:queueId/:id",
+      ":host:/jira/servicedesk/projects/:projectId/issues/:id",
+      ":host:/jira/servicedesk/projects/:projectId/boards/:board",
     ],
     queryParams: {
       id: "selectedIssue",
